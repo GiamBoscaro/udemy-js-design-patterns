@@ -1,21 +1,16 @@
-class Field
-{
-  constructor(name)
-  {
+class Field {
+  constructor(name) {
     this.name = name;
   }
 }
 
-class Class
-{
-  constructor(name)
-  {
+class Class {
+  constructor(name) {
     this.name = name;
     this.fields = [];
   }
 
-  toString()
-  {
+  toString() {
     let buffer = [];
     buffer.push(`class ${this.name} {\n`);
 
@@ -32,23 +27,19 @@ class Class
   }
 }
 
-class CodeBuilder
-{
-  constructor(className)
-  {
+class CodeBuilder {
+  constructor(className) {
     this._class = new Class(className);
   }
 
-  addField(name)
-  {
+  addField(name) {
     this._class.fields.push(
       new Field(name)
     );
     return this;
   }
 
-  toString()
-  {
+  toString() {
     return this._class.toString();
   }
 }
